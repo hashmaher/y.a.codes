@@ -52,10 +52,12 @@ header {
 header a {
 	display: block;
 	height: 100%;
+	object-fit: contain;
 }
 
 .logo {
 	height: 100%;
+	object-fit: contain;
 	overflow: hidden;	/*transform時にハミ出ないように*/
 	position: absolute;
 	left: 0;
@@ -523,6 +525,7 @@ input, textarea {
 	}
 	
 }
+
 
 
 
