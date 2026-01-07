@@ -1,0 +1,522 @@
+@charset "utf-8";
+
+/*root-----------------------------------------------------------*/
+
+:root {
+	--main-color: #0C2B4E;
+	--accent-color: #1A3D64;
+	--bg-color: #1D546C;
+	--text-color: F4F4F4;
+}
+
+/*---------------------------------------------------------------*/
+
+* {
+  box-sizing: border-box;	/*固定ヘッダ関連*/
+}
+
+
+html {
+	background: #eee;
+	font-family: system-ui;
+}
+
+body {
+	width: 100%;
+	color: #333;
+}
+
+html, body {
+  overflow-x: hidden;	/*固定ヘッダ関連*/
+}
+
+/*ヘッダー-------------------------------------------------------*/
+
+/*ハンバーガーメニュー関連は下です*/
+
+header {
+	top: 0;
+	left: 0;
+	right: 0;
+	width: auto; /* ←これでビューポートにピッタリ */
+	height: clamp(40px, 18vw, 60px);
+	background: #fff;
+	position: fixed;
+	z-index: 999;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+/*	box-shadow: 0px 10px 0px rgba(0,0,0,0.5);	*/
+}
+
+.logo {
+	overflow: hidden;	/*transform時にハミ出ないように*/
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: clamp(40px, 18vw, 60px);
+}
+
+.logo img {
+	width: 100%;
+	height: 100%;
+  	background: #eee;
+/*	position: fixed;	 固定！ */
+	transition: transform 0.4s ease;
+}
+
+.logo img:hover {
+	transform: scale(1.2); /* hover時に拡大 */
+}
+
+.item {
+	margin-left: 20px;
+  	padding-right: 1.4vw;
+	font-weight: bold;
+	font-size: clamp(10px, 3vw, 18px);
+	vertical-align: middle;
+	color: #222;
+/*	text-shadow: 2px 2px black;	*/
+}
+
+/*.item:hover {
+	transform: scale(1.1); 	
+}*/
+
+.item_box {
+	color: #222;
+	display: flex;
+	height: 60px;
+	transition: transform 0.4s ease;
+	align-items: center;
+	border-bottom: 3px solid transparent;
+	transition: border-color 0.6s ease;
+}
+
+.item_box:hover {
+	color: #222;
+	border-color: #333;
+}
+
+.jump:hover {
+	opacity: 1;
+}
+
+.hero_image {
+	padding-top: 60px;
+	display: block;
+	width: 100%;
+	margin: 0px auto 0px auto;
+/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.5);	*/
+}
+
+.menu {
+	display: flex;
+	margin: 0 auto;
+}
+
+.down_arrow {
+	-webkit-text-stroke-width: 7px;
+	-webkit-text-stroke-color: #555;
+	margin-top: -160px;
+	text-align: center;
+	font-size: 70px;
+	color: #eee;
+	animation: fuwafuwa 2s ease-in-out infinite;
+}
+
+.arrow_2 {
+	margin-top: 0px;
+}
+
+@keyframes fuwafuwa {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/*aboutから------------------------------------------------------*/
+
+.about_outer {
+	width: 80%;	
+	background: #fff;
+	margin: 200px auto 0 auto;
+/*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,1));	*/
+/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
+}
+
+.title {
+	font-family: sans-serif;
+	letter-spacing: 0.1em;
+	background: #ddd;
+	display: block;
+	text-align: center;
+	margin: 0 auto 0px;
+	font-size: 28px;
+/*	filter: drop-shadow(5px 5px 10px rgba(0,0,0,1));	*/
+/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
+}
+
+#about {
+	padding-top: 20px;
+	padding-bottom: 40px;
+	scroll-margin-top: 200px;
+	background: #fff;
+}
+
+#about H2{
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+#about p {
+	font-size: 18px;
+}
+
+#about .selfIntroduction {
+	width: 80%;
+	margin: 45px auto 0;
+}
+
+.in_logo {
+	aspect-ratio: 1 / 1;
+	height: 150px;
+	width:150px;
+	margin: auto 45px auto 0;
+/*	filter: drop-shadow(5px 5px 10px rgba(0,0,0,1));	*/
+/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
+}
+
+.skills_outer {
+	width: 80%;	
+	background: #fff;
+	margin: 200px auto 0 auto;
+	border-radius: 10px;
+/*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,1));	*/
+/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
+}
+
+#skill_container {
+	width: 100%;
+	scroll-margin-top: 200px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 5px;
+	padding-bottom: 30px;
+}
+
+.skill {
+	background: #eee;
+	width: 400px;
+	height: 300px;
+	padding: 10px 10px;
+	margin: 60px 60px;
+	border-radius: 20px;
+/*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.7));	*/
+/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);			*/
+}
+
+.skill h3 {
+	font-family: sans-serif;
+	letter-spacing: 0.1em;
+	font-size: 25px;
+	padding: 10px 0 15px;
+	text-align: center;
+}
+
+.skill p {
+	padding: 0 10px;
+	font-size: 18px;
+}
+
+#js-skill {
+	display: inline-block;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	margin: 30px 0%;
+	width: 100%;
+	color: #338;
+}
+
+.supplement {
+	text-align: center;
+	color: #555;
+}
+
+/*トップへ戻る---------------------------------------------------*/
+
+.to_top {
+	display: none;
+	background: #333;
+	width: 70px;
+	height: 70px;
+	position: fixed;
+	bottom: 60px;
+	right: 60px;
+	border: 3px solid #ddd;
+	border-radius: 40px;
+	transition: transform 0.4s ease;
+}
+
+.to_top p {
+	display: block;
+	text-align: center;
+	color: #ddd;
+	font-size: 40px;
+	padding: 5px 10px 30px 10px;
+	margin: auto auto;
+}
+
+.to_top:hover {
+	transform: scale(1.1); /* hover時に拡大 */
+}
+
+/*フッター・入力フォーム-----------------------------------------*/
+
+footer {
+	width: 100%;
+/*	background: #333;	*/
+/*	background: linear-gradient(119deg, rgba(65, 198, 219, 1) 0%, rgba(36, 174, 223, 1) 37%, rgba(75, 157, 236, 1) 100%);		*/
+	background: linear-gradient(135deg, #E0E0E0, #B3B3B3, #666666);
+	margin-top: 100px;
+	padding-bottom: 100px;
+	scroll-margin-top: 60px;
+}
+
+.contact_form {
+	padding-top: 30px;
+	margin: 0 auto;
+	width: 100%;
+	color: #666;
+	padding: 60px 0 0 15%;
+}
+
+.contact_form H2 {
+	padding: 0 30px 30px 0;
+}
+
+form p {
+	display: block;
+	width: 60%;
+	border-bottom: 3px dashed #999;
+	margin-bottom: 20px;
+}
+
+input, textarea {
+	outline: none;       /* フォーカス時の青枠を消す */
+	border-bottom: 2px solid #333; /* 下線だけにする */
+	padding: 8px;
+	font-size: 16px;
+	width: 50%;
+	height: 200px;
+	border: 1px solid #ccc;
+	border-radius: 6px;   /* 角丸 */
+	padding: 10px;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* 内側の影 */
+ 	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);
+}
+
+.name, .mail {
+	width: 30%;
+	margin-bottom: 70px;
+	height: 40px;
+}
+
+#button {
+	width: 100px;
+	height: 40px;
+	line-height: 40px; /* 高さと同じにする */
+	margin-top: 30px;
+	background-color: #666; /* 背景色 */
+	color: white;              /* 文字色 */
+	padding: 0px;        		/* 内側余白 */
+	border: none;              /* 枠線なし */
+	border-radius: 5px;        /* 角丸 */
+	cursor: pointer;           /* ホバー時にポインタ */
+}
+
+#button:hover {
+	background-color: #45a049; /* 少し濃い色に */
+	transform: scale(1.05);    /* ほんの少し拡大 */
+}
+
+/*レスポンシブ対応-------------------------------------------------*/
+
+/*PC-------------------------------------------------------------*/
+
+@media screen and (min-width: 768px) {
+
+	header {
+		display: flex;	
+	}
+
+	.menu {
+		display: flex;
+  	}
+  	
+  	.item {
+		display: inline;
+  	}
+  	
+  	.hamburger {
+  		display: none;
+  	}
+  	
+  	.in_logo {
+		float: left;
+		display: inline;
+  	}
+}
+
+/*スマホ---------------------------------------------------------*/
+
+.hamburger {
+	display: none;	/*PC時に消す命令*/
+	font-size: 40px;
+	color: #444;
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	z-index: 1000; /* メニューより前面 */
+}
+
+@media screen and (max-width: 768px) {
+
+	.menu {
+		/* display: none; */
+		flex-direction: column;
+		align-items: center;
+		background: #eee;
+    	position: absolute;
+    	top: 0px;
+    	right: 0;
+    	width: 80%;
+    	height: 1000px;
+    	padding: 20px 0;
+		font-size: 20px;
+		transform: translateX(100%); /* 初期状態：画面外 */
+	    transition: transform 0.3s ease;
+		position: fixed;
+		z-index: 2000;
+ 	}
+
+	.menu.active {
+    	display: flex;
+		transform: translateX(0); /* 画面内へ */
+	}
+	
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.5);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity .3s;
+		z-index: 1000;
+	}
+
+	.overlay.active {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+
+  	.item {
+    	margin: 10px 0;
+    	display: block;
+		color: #eee;
+		font-size: 20px;
+	}
+
+  	.hamburger {
+    	display: block;
+ 	}
+
+	.down_arrow {
+		display: none;
+	}
+
+	.arrow_2 {
+		margin-top: 0px;
+	}
+ 	
+ 	.about_outer {
+ 		width: 90%;
+ 	}
+ 	
+ 	.in_logo {
+ 		float: none;
+ 		margin: 0 auto;
+ 		display: block;
+ 		margin-bottom: 60px;
+ 	}
+
+	#about .selfIntroduction {
+		width: 90%;
+	}
+
+	.selfIntroduction p {
+		float: none;
+	}
+	
+	.selfIntroduction .space {
+		display:none;
+	}
+	
+	.skills_outer {
+ 		width: 90%;
+ 	}
+
+	.skill {
+		width: 85%;
+		margin: 26px auto;
+	}
+
+	.to_top {
+		display: none;
+		width: 70px;
+		height: 70px;
+		position: fixed;
+		bottom: 100px;	/*Androidのナビバーに注意*/
+		right: 20px;
+		border: 3px solid #ddd;
+		border-radius: 40px;
+	}
+
+	.to_top p{
+		display: block;
+		text-align: center;
+		font-size: 40px;
+		padding: 5px 10px 30px 10px;
+		margin: auto auto;
+	}
+	
+	.contact_form {
+		margin: 0 0;
+		padding: 35px 0 0 5%;
+	}
+	
+	.name{
+		width: 70%;
+	}
+	
+	.mail{
+		width: 70%;
+	}
+	
+	.mail_text {
+		width: 95%;
+	}
+	
+}
+
+
+
+
