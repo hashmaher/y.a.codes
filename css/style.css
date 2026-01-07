@@ -63,6 +63,7 @@ header a {
 	left: 0;
 	bottom: 0;
 	height: clamp(40px, 18vw, 60px);
+	background: #fff;
 }
 
 .logo img {
@@ -525,6 +526,7 @@ input, textarea {
 	}
 	
 }
+
 
 
 
