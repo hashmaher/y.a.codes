@@ -410,6 +410,7 @@ input, textarea {
 	
 	.sp {
 		display: block;
+		margin-bottom: 60px;
 	}
 	
 	.menu {
@@ -543,6 +544,7 @@ input, textarea {
 	}
 	
 }
+
 
 
 
