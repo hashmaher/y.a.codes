@@ -364,6 +364,14 @@ input, textarea {
 		display: flex;	
 	}
 
+	.pc {
+		display: block;
+	}
+	
+	.sp {
+		display: none;
+	}
+
 	.menu {
 		display: flex;
   	}
@@ -396,6 +404,14 @@ input, textarea {
 
 @media screen and (max-width: 768px) {
 
+	.pc {
+		display: none;
+	}
+	
+	.sp {
+		display: block;
+	}
+	
 	.menu {
 		/* display: none; */
 		flex-direction: column;
@@ -526,6 +542,7 @@ input, textarea {
 	}
 	
 }
+
 
 
 
