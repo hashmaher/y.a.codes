@@ -466,7 +466,8 @@ input, textarea {
  	}
 
 	.down_arrow {
-		display: none;
+/*		display: none;		*/
+		margin-top: -300px;
 	}
 
 	.arrow_2 {
@@ -542,6 +543,7 @@ input, textarea {
 	}
 	
 }
+
 
 
 
