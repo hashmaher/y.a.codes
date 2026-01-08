@@ -128,29 +128,28 @@ header a {
 .down_arrow {
 	-webkit-text-stroke-width: 7px;
 	-webkit-text-stroke-color: #555;
-	margin-top: -160px;
 	text-align: center;
 	font-size: 70px;
 	color: #eee;
 	animation: fuwafuwa 2s ease-in-out infinite;
 }
 
-.arrow_2 {
-	margin-top: 0px;
+.arrow_1 {
+	margin-top: -160px;
 }
 
-@keyframes fuwafuwa {
-    0%   { transform: translateY(0); }
-    50%  { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
+.arrow_2 {
+	clear: both;
+	margin-top: 50px;
 }
 
 /*aboutから------------------------------------------------------*/
 
 .about_outer {
-	width: 80%;	
+	width: 100%;	
 	background: #fff;
 	margin: 200px auto 0 auto;
+	padding-bottom: 100px;
 /*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,1));	*/
 /*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
 }
@@ -186,21 +185,30 @@ header a {
 }
 
 #about .selfIntroduction {
+	display: flex;
+	align-items: center;
 	width: 80%;
-	margin: 45px auto 0;
+	margin: 45px auto 0 auto;
+}
+
+.profile {
+	margin-left: 5%;
+	width:65%
 }
 
 .in_logo {
+	display: block;
 	aspect-ratio: 1 / 1;
 	height: 150px;
 	width:150px;
-	margin: auto 45px auto 0;
 /*	filter: drop-shadow(5px 5px 10px rgba(0,0,0,1));	*/
 /*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
 }
 
+/*skillsから------------------------------------------------------*/
+
 .skills_outer {
-	width: 80%;	
+	width: 95%;	
 	background: #fff;
 	margin: 200px auto 0 auto;
 	border-radius: 10px;
@@ -214,17 +222,15 @@ header a {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	padding-top: 5px;
 	padding-bottom: 30px;
 }
 
 .skill {
 	background: #eee;
-	width: 400px;
+	width: 44%;
+	margin: 2% 2%;
 	height: 300px;
-	padding: 10px 10px;
-	margin: 60px 60px;
-	border-radius: 20px;
+	border-radius: 40px;
 /*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.7));	*/
 /*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);			*/
 }
@@ -360,6 +366,13 @@ input, textarea {
 
 @media screen and (min-width: 768px) {
 
+
+	@keyframes fuwafuwa {
+	    0%   { transform: translateY(0); }
+	    50%  { transform: translateY(-10px); }
+	    100% { transform: translateY(0); }
+	}
+
 	header {
 		display: flex;	
 	}
@@ -385,8 +398,8 @@ input, textarea {
   	}
   	
   	.in_logo {
-		float: left;
-		display: inline;
+		display: block;
+		margin: 0 3% 0 5%;
   	}
 }
 
@@ -403,6 +416,12 @@ input, textarea {
 }
 
 @media screen and (max-width: 768px) {
+	
+	@keyframes fuwafuwa {
+	  0%   { transform: translate(-50%, 0); }
+	  50%  { transform: translate(-50%, -10px); }
+	  100% { transform: translate(-50%, 0); }
+	}
 
 	.pc {
 		display: none;
@@ -410,7 +429,8 @@ input, textarea {
 	
 	.sp {
 		display: block;
-		margin-bottom: 60px;
+		margin-bottom: 0px;
+		overflow: hidden; /* または auto */
 	}
 	
 	.menu {
@@ -418,21 +438,21 @@ input, textarea {
 		flex-direction: column;
 		align-items: center;
 		background: #eee;
-    	position: absolute;
-    	top: 0px;
-    	right: 0;
-    	width: 80%;
-    	height: 1000px;
-    	padding: 20px 0;
+		position: absolute;
+		top: 0px;
+		right: 0;
+		width: 80%;
+		height: 1000px;
+		padding: 20px 0;
 		font-size: 20px;
 		transform: translateX(100%); /* 初期状態：画面外 */
-	    transition: transform 0.3s ease;
+		transition: transform 0.3s ease;
 		position: fixed;
 		z-index: 2000;
- 	}
+	}
 
 	.menu.active {
-    	display: flex;
+		display: flex;
 		transform: translateX(0); /* 画面内へ */
 	}
 	
@@ -467,24 +487,26 @@ input, textarea {
  	}
 
 	.down_arrow {
-/*		display: none;		*/
 		margin-top: -340px;
+		position: absolute;
+		Left: 50%;
+		animation: fuwafuwa 3s infinite;
 	}
 
 	.arrow_2 {
 		margin-top: 0px;
 	}
- 	
- 	.about_outer {
- 		width: 90%;
- 	}
- 	
- 	.in_logo {
- 		float: none;
- 		margin: 0 auto;
- 		display: block;
- 		margin-bottom: 60px;
- 	}
+
+	.about_outer {
+		margin: 0 auto 0 auto;
+	}
+	
+	.in_logo {
+		float: none;
+		margin: 0 auto;
+		display: block;
+		margin-bottom: 60px;
+	}
 
 	#about .selfIntroduction {
 		width: 90%;
@@ -499,7 +521,7 @@ input, textarea {
 	}
 	
 	.skills_outer {
- 		width: 90%;
+ 		width: 100%;
  	}
 
 	.skill {
