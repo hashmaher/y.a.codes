@@ -5,7 +5,7 @@ $(function() {
         e.preventDefault();
         
         const target = $(this).attr('href');
-        let pos = $(target).offset().top - 170; //const禁止
+        let pos = $(target).offset().top - 105; //const禁止
 
         if (target === '#footer') {
             pos += 120;
