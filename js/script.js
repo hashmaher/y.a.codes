@@ -3,7 +3,7 @@ $(function() {
     //ジャンプのスクロール機能-----------------------------------------------   
 const isMobile = window.innerWidth <= 768; // 好きなブレークポイントでOK
 
-const scrollDistance = isMobile ? 150 : 105; 
+const scrollDistance = isMobile ? 150 : 135; 
 
 
     $('.jump').on('click', function(e) {

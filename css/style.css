@@ -61,7 +61,6 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: flex-end;
-/*	box-shadow: 0px 10px 0px rgba(0,0,0,0.5);	*/
 }
 
 header a {
@@ -83,10 +82,8 @@ header a {
 
 .logo img {
 	height: 100%;
-/*	width: 100%;	*/
 	object-fit: contain;
 	background: #eee;
-/*	position: fixed;	 固定！ */
 	transition: transform 0.4s ease;
 }
 
@@ -96,17 +93,12 @@ header a {
 
 .item {
 	margin-left: 20px;
-  	padding-right: 1.4vw;
+	padding-right: 1.4vw;
 	font-weight: bold;
 	font-size: clamp(10px, 3vw, 18px);
 	vertical-align: middle;
 	color: #222;
-/*	text-shadow: 2px 2px black;	*/
 }
-
-/*.item:hover {
-	transform: scale(1.1); 	
-}*/
 
 .item_box {
 	color: #222;
@@ -132,7 +124,6 @@ header a {
 	display: block;
 	width: 100%;
 	margin: 0px auto 0px auto;
-/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.5);	*/
 }
 
 .menu {
@@ -155,7 +146,7 @@ header a {
 
 .arrow_2 {
 	clear: both;
-	margin-top: 20px;
+	margin-top: 0px;
 }
 
 .arrow_3 {
@@ -165,13 +156,11 @@ header a {
 /*aboutから------------------------------------------------------*/
 
 .about_outer {
-	width: 95%;
+	width: 90%;
 	background: #fff;
 	margin: 200px auto 0 auto;
 	padding-bottom: 100px;
 	border-radius:20px;
-/*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,1));	*/
-/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
 }
 
 .title {
@@ -184,12 +173,6 @@ header a {
 	font-size: 28px;
 	border-top-right-radius: 20px;
 	border-top-left-radius: 20px;
-/*	filter: drop-shadow(5px 5px 10px rgba(0,0,0,1));	*/
-/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
-}
-
-.about_outer {
-	width: 100%;
 }
 
 #about {
@@ -228,8 +211,7 @@ header a {
 	aspect-ratio: 1 / 1;
 	height: 150px;
 	width:150px;
-/*	filter: drop-shadow(5px 5px 10px rgba(0,0,0,1));	*/
-/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
+	border-radius: 20px;
 }
 
 /*skillsから------------------------------------------------------*/
@@ -239,8 +221,6 @@ header a {
 	background: #fff;
 	margin: 200px auto 0 auto;
 	border-radius: 20px;
-/*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,1));	*/
-/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
 }
 
 #skill_container {
@@ -331,9 +311,6 @@ img.skill_icon {
 }
 
 
-
-
-
 /*トップへ戻る---------------------------------------------------*/
 
 .to_top {
@@ -366,8 +343,6 @@ img.skill_icon {
 
 footer {
 	width: 100%;
-/*	background: #333;	*/
-/*	background: linear-gradient(119deg, rgba(65, 198, 219, 1) 0%, rgba(36, 174, 223, 1) 37%, rgba(75, 157, 236, 1) 100%);		*/
 	background: linear-gradient(135deg, #E0E0E0, #B3B3B3, #666666);
 	margin-top: 100px;
 	padding-bottom: 100px;
@@ -660,19 +635,3 @@ input, textarea {
 	}
 	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
