@@ -1,11 +1,16 @@
 $(function() {
     
     //ジャンプのスクロール機能-----------------------------------------------   
+const isMobile = window.innerWidth <= 768; // 好きなブレークポイントでOK
+
+const scrollDistance = isMobile ? 150 : 105; 
+
+
     $('.jump').on('click', function(e) {
         e.preventDefault();
         
         const target = $(this).attr('href');
-        let pos = $(target).offset().top - 105; //const禁止
+        let pos = $(target).offset().top - scrollDistance ; //const禁止
 
         if (target === '#footer') {
             pos += 120;

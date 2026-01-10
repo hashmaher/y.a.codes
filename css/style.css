@@ -26,6 +26,21 @@ body {
 	color: #333;
 }
 
+/*		周辺減光アソビするならこれ
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	box-shadow: 0 0 100px 0px rgba(0,0,0,0.5) inset;
+	z-index: 9999;
+}
+*/
+
+
+これが効く理由
+
+
 html, body {
   overflow-x: hidden;	/*固定ヘッダ関連*/
 }
@@ -140,16 +155,21 @@ header a {
 
 .arrow_2 {
 	clear: both;
-	margin-top: 50px;
+	margin-top: 20px;
+}
+
+.arrow_3 {
+	margin-top: -100px;
 }
 
 /*aboutから------------------------------------------------------*/
 
 .about_outer {
-	width: 100%;	
+	width: 95%;
 	background: #fff;
 	margin: 200px auto 0 auto;
 	padding-bottom: 100px;
+	border-radius:20px;
 /*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,1));	*/
 /*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
 }
@@ -162,12 +182,18 @@ header a {
 	text-align: center;
 	margin: 0 auto 0px;
 	font-size: 28px;
+	border-top-right-radius: 20px;
+	border-top-left-radius: 20px;
 /*	filter: drop-shadow(5px 5px 10px rgba(0,0,0,1));	*/
 /*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
 }
 
+.about_outer {
+	width: 100%;
+}
+
 #about {
-	padding-top: 20px;
+	padding-top: 60px;
 	padding-bottom: 40px;
 	scroll-margin-top: 200px;
 	background: #fff;
@@ -186,6 +212,7 @@ header a {
 
 #about .selfIntroduction {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	width: 80%;
 	margin: 45px auto 0 auto;
@@ -208,33 +235,38 @@ header a {
 /*skillsから------------------------------------------------------*/
 
 .skills_outer {
-	width: 95%;	
+	width: 90%;	
 	background: #fff;
 	margin: 200px auto 0 auto;
-	border-radius: 10px;
+	border-radius: 20px;
 /*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,1));	*/
 /*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);		*/
 }
 
 #skill_container {
+	padding: 0 30px;
 	width: 100%;
 	scroll-margin-top: 200px;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	padding-bottom: 30px;
+	background: #fff;
 }
 
 .skill {
-	background: #eee;
-	width: 44%;
-	margin: 2% 2%;
-	height: 300px;
-	border-radius: 40px;
-/*	filter: drop-shadow(10px 10px 10px rgba(0,0,0,0.7));	*/
-/*	box-shadow: 10px 10px 0px RGBA(0, 0, 0, 0.25);			*/
+	width: 33.3333%;
+	height: 490px;
+	padding: 0 40px;
 }
 
+.skill_title {
+	width: 100%;
+	padding: 20px;
+	margin-top: 60px;
+}
+
+/*
 .skill h3 {
 	font-family: sans-serif;
 	letter-spacing: 0.1em;
@@ -242,26 +274,65 @@ header a {
 	padding: 10px 0 15px;
 	text-align: center;
 }
+*/
+
+img.skill_icon {
+	display: block;
+	width: 30%;
+	margin: 30px auto 30px;
+}
 
 .skill p {
-	padding: 0 10px;
-	font-size: 18px;
+	font-size: 15px;
 }
 
-#js-skill {
-	display: inline-block;
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	margin: 30px 0%;
+#subskill_outer {
+	margin-top: 60px;
 	width: 100%;
-	color: #338;
+	background: #eee;
+	border-radius: 20px;
+	padding-bottom: 10px;
 }
 
-.supplement {
-	text-align: center;
-	color: #555;
+.subskill_title_container {
+	width:100%;
+	padding: 10px;
 }
+
+.subskill_title {
+	text-align: center;
+	flex: 0 0 100%;
+}
+
+.subskill_container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.subskill {
+	margin: 10px 30px 10px 30px;
+	display: block;
+/*	background: #fff;	*/
+	border: solid 1px #ccc;
+	border-radius: 20px;
+	width: 30%;
+	min-width: 30%;
+}
+
+.subskill h4 {
+	margin:10px auto;
+	text-align: center;
+}
+
+.subskill p {
+	font-size: 14px;
+	margin: 10px 20px;
+}
+
+
+
+
 
 /*トップへ戻る---------------------------------------------------*/
 
@@ -494,7 +565,15 @@ input, textarea {
 	}
 
 	.arrow_2 {
-		margin-top: 0px;
+		display: none;
+	}
+
+	.arrow_3 {
+		display: none;
+	}
+
+	#about {
+		padding-top: 0px;
 	}
 
 	.about_outer {
@@ -520,13 +599,28 @@ input, textarea {
 		display:none;
 	}
 	
+	.profile {
+		margin: 0 auto;
+		width:100%;
+	}
+	
 	.skills_outer {
  		width: 100%;
  	}
 
+	.skill_title{
+		margin-top: 10px;
+	}
+	
 	.skill {
-		width: 85%;
+		width: 90%;
 		margin: 26px auto;
+		height: auto;
+		padding: 0 0;
+	}
+
+	.subskill {
+		width:100%;
 	}
 
 	.to_top {
