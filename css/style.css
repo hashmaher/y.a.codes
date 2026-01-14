@@ -311,6 +311,50 @@ img.skill_icon {
 }
 
 
+/*WORKS---------------------------------------------------*/
+
+.works_outer {
+	width: 90%;	
+	background: #fff;
+	margin: 50px auto 0 auto;
+	border-radius: 20px;
+}
+
+#works_container {
+	height: auto;
+	width: 100%;
+	scroll-margin-top: 200px;
+	justify-content: center;
+	padding-bottom: 30px;
+	background: #fff;
+	border-radius:20px;
+}
+
+.portfolio_link {
+	display: inline-block;   /* ← 画像の幅に縮む */
+}
+
+.case {
+	margin: 60px auto;
+	text-align: center;      /* 中身を中央寄せ */
+	width: 45%;
+}
+
+.case h3{
+	text-align: center;
+}
+
+.case p{
+	text-align: center;
+}
+
+.thumb {
+	display: block;
+	margin: 0 auto;
+	border: solid 2px #bbb;
+}
+
+
 /*トップへ戻る---------------------------------------------------*/
 
 .to_top {
