@@ -232,6 +232,7 @@ header a {
 	justify-content: center;
 	padding-bottom: 30px;
 	background: #fff;
+	border-radius: 20px;
 }
 
 .skill {
@@ -328,17 +329,27 @@ img.skill_icon {
 	padding-bottom: 30px;
 	background: #fff;
 	border-radius:20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .portfolio_link {
 	display: inline-block;   /* ← 画像の幅に縮む */
 }
 
+.case_outer {
+	width: 100%;
+}
+
 .case {
 	margin: 60px auto;
 	text-align: center;      /* 中身を中央寄せ */
 	width: 45%;
+	flex: 0 0 100%;
+
 }
+
 
 .case h3{
 	text-align: center;
