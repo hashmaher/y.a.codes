@@ -1,0 +1,511 @@
+/* ------------------------------
+   基本設定
+------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.7;
+  color: #333;
+  background: #f7f7f7;
+}
+
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ------------------------------
+   ヘッダー
+------------------------------ */
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo-mark {
+  background: #2c7a3f;
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.logo-text .city-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.logo-text .city-office {
+  font-size: 14px;
+  color: #555;
+}
+
+
+.global-nav ul {
+  display: flex;
+  align-items: center;
+}
+
+.global-nav ul li {
+  position: relative;
+  padding: 0 20px; /* ← 左右均等に余白を確保 */
+  text-align: center;
+  list-style: none;
+}
+
+.global-nav ul li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 18px; /* テキストの高さに合わせる */
+  background: #ccc;
+}
+
+.global-nav a {
+  font-weight: 500;
+  padding: 8px 0;
+}
+
+/* ------------------------------
+   メインビジュアル
+------------------------------ */
+.hero {
+  background: url("../image/takamori_city.jpg") center/cover no-repeat;
+  color: #fff;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero-inner {
+  max-width: 900px;
+  margin: auto;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn.primary {
+  background: #2c7a3f;
+  color: #fff;
+}
+
+.btn.secondary {
+  background: #fff;
+  color: #2c7a3f;
+  border: 2px solid #2c7a3f;
+  margin-left: 10px;
+}
+
+/* ------------------------------
+   セクション共通
+------------------------------ */
+.section,
+.section-alt {
+  padding: 60px 20px;
+}
+
+.section-inner {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  border-left: 6px solid #2c7a3f;
+  padding-left: 12px;
+}
+
+/* ------------------------------
+   緊急情報
+------------------------------ */
+.emergency {
+  background: #fff3f3;
+  border-top: 3px solid #d9534f;
+  border-bottom: 3px solid #d9534f;
+}
+
+.emergency-list {
+  list-style: none;
+}
+
+.emergency-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.tag.alert {
+  background: #d9534f;
+  color: #fff;
+}
+
+.tag.info {
+  background: #0275d8;
+  color: #fff;
+}
+
+/* ------------------------------
+   カード
+------------------------------ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card time {
+  font-size: 14px;
+  color: #666;
+}
+
+.card p {
+  margin: 15px 0;
+}
+
+.card-link {
+  font-weight: bold;
+  color: #2c7a3f;
+}
+
+/* ------------------------------
+   グリッド（くらし・手続き）
+------------------------------ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.grid-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.grid-item ul {
+  list-style: none;
+}
+
+.grid-item li {
+  margin-bottom: 8px;
+}
+
+/* ------------------------------
+   アクセス
+------------------------------ */
+#access {
+	padding: 20px 0 20px;
+}
+
+.access-list {
+  list-style: none;
+  line-height: 1.8;
+}
+
+/* 左のアクセス情報ボックス */
+.access-box {
+/*  background: #fff; */
+  padding: 20px;
+  padding-left: 50px;
+/*  border-radius: 6px; */
+/*  border: 1px solid #ddd; */
+  flex: 1;
+  max-width: 800px;
+}
+.access-box h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.access-box ul {
+  list-style: none;
+  line-height: 1.8;
+}
+
+.access-box li strong {
+  color: #2c7a3f;
+}
+
+/* アクセス全体の2カラムレイアウト */
+.access-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.access-box h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.access-box ul {
+  list-style: none;
+  line-height: 1.8;
+}
+
+.access-box li strong {
+  color: #2c7a3f;
+}
+
+/* 右の補助リンクボックス */
+.sub-links {
+/*  background: #fff; */
+  padding: 50px;
+  border-radius: 6px;
+/*  border: 1px solid #ddd; */
+  width: 40%;
+}
+
+.sub-links h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.sub-links ul {
+  list-style: none;
+  line-height: 1.8;
+}
+
+.sub-links a {
+  color: #0066cc;
+  font-weight: 500;
+}
+
+/* スマホで縦積みにする */
+@media (max-width: 800px) {
+  .access-layout {
+    flex-direction: column;
+  }
+
+  .sub-links {
+    width: 100%;
+  }
+}
+
+
+.sub-links ul {
+	padding-top: 30px;
+	line-height: 2.5;
+}
+
+.sub-links ul li {
+  font-size: 0.8em;
+  position: relative;
+  padding-left: 1.2em;
+  list-style: none; /* 念のため */
+}
+
+.sub-links ul li::before {
+  content: "＞";
+  position: absolute;
+  left: 0;
+  top: 0.1em; /* テキストと縦位置を合わせる */
+  color: #2c7a3f;
+  font-weight: bold;
+  font-size: 0.8em;   /* ← 小さくする */
+  color: #666;        /* ← 落ち着いたグレーに */
+  font-weight: normal; /* ← 太さを抑える */
+
+}
+
+
+/* ------------------------------
+   フッター
+------------------------------ */
+.site-footer {
+  background: #2c7a3f;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* ------------------------------
+   レスポンシブ対応
+------------------------------ */
+
+/* タブレット */
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header {
+    height: 47px;
+  }
+
+  .header-inner {
+    padding: 0 0;
+  }
+  
+  .city-office {
+    display: none;
+  }
+  
+  .logo-mark {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 14px;
+  margin-right: 10px;
+  border-radius: 0px;
+  height: 47px;
+  padding: 5px 13px;
+  vertical-align: middle;
+}
+  
+.logo-text .city-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+  
+.logo-text .city-office {
+  font-size: 14px;
+  color: #555;
+}
+  
+  .global-nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .global-nav {
+  	display: none;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 60px 20px;;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .btn.secondary {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .section {
+    padding-bottom: 0px;
+  }
+  
+  .emergency {
+    padding: 25px 0 50px;
+  }
+  
+  .emergency h2 {
+    text-align: center;
+  }
+  
+  .access-box {
+    padding-left: 25px;
+  }
+  
+  .sub-links {
+    padding: 0 30px;
+  }
+  
+  .sub-links ul {
+    padding-top: 0;
+    line-height: 2;
+  }
+  
+  .site-footer {
+    margin: 0 0;
+  }
+  
+}
