@@ -1,0 +1,555 @@
+/* ベース */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+    "Segoe UI", "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN",
+    "Meiryo", sans-serif;
+  color: #222;
+  background-color: #fff7f8;
+  line-height: 1.7;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, 100% - 32px);
+  margin-inline: auto;
+}
+
+.for-sp {
+  display: none;
+}
+
+/* ヘッダー 	--------------------------------------------*/
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+/*  background: rgba(255, 247, 248, 0.9);  */
+  background: white;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 12px;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-size: 0.9rem;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+}
+
+.nav a {
+  position: relative;
+  padding-block: 4px;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #c72b4b;
+  transition: width 0.2s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* --- HERO SECTION ----------------------------------- */
+.hero {
+  background: linear-gradient(
+    180deg,
+    #fff7f8 0%,
+    #fff4f6 60%,
+    #ffeef2 100%
+  );
+/*  background: #f4eff4;  */
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: start; /* コピーを上に固定 */
+  width: min(1120px, 100% - 32px);
+  margin-inline: auto;
+}
+
+.hero-tagline {
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  color: #c72b4b;
+  margin-bottom: 12px;
+}
+
+.hero-title {
+  font-size: clamp(2.2rem, 3vw + 1rem, 3rem);
+  margin: 0 0 20px;
+  line-height: 1.25;
+}
+
+.hero-text {
+  font-size: 1rem;
+  margin-bottom: 28px;
+  color: #444;
+}
+
+.hero-visual {
+  justify-self: end;
+}
+
+.hero-visual img {
+  width: 100%;
+  max-height: 800px; /* 画面に収めない前提で大きめ */
+  object-fit: contain;
+  object-position: top; /* 上から舐めるように見せる */
+  margin-top: -90px; /* あえて少し上に食い込ませる */
+  margin-right: -40px;
+  user-select: none;
+}
+
+.hero-copy {
+  padding-top: 140px;
+}
+
+/* ボタン */
+
+.btn-primary {
+  display: inline-flex;
+  padding: 12px 32px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff4b6e, #c72b4b);
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(199, 43, 75, 0.35);
+  transition: 0.2s ease;
+  font-size: clamp(1rem, 4.5vw, 1.5rem);
+}
+
+/*
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff4b6e, #c72b4b);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(199, 43, 75, 0.35);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.1s ease;
+}
+*/
+
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(199, 43, 75, 0.45);
+}
+
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(199, 43, 75, 0.3);
+}
+
+/* CONCEPT-------------------------------------*/
+
+#concept {
+  scroll-margin-top :55px;
+}
+
+.model-section {
+  padding-block: 40px 72px;
+}
+
+.model-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.model-image {
+  width:100%;
+  left: 0;
+}
+
+.model-image img {
+  object-fit: cover;
+}
+
+.model-copy h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.model-copy p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.feature-list span {
+  color: #c72b4b;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+/*SECTION 共通-------------------------------------*/
+
+.section-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.section-lead {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+/*COLORS-------------------------------------*/
+.colors-section {
+  padding-block: 56px;
+  background: #fff;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.color-card {
+  background: #fff7f8;
+  border-radius: 18px;
+  padding: 18px 16px 20px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+.color-card h3 {
+  margin: 12px 0 6px;
+  font-size: 0.95rem;
+}
+
+.color-card p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.color-chip {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  margin-inline: auto;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.color-rose {
+  background: #f28aa5;
+}
+
+.color-red {
+  background: #d0203a;
+}
+
+.color-beige {
+  background: #d9a58a;
+}
+
+.color-plum {
+  background: #7b3058;
+}
+
+/* VOICE-------------------------------------*/
+.voice-section {
+  padding-block: 56px;
+}
+
+.voice-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.voice-item {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 18px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+  font-size: 0.9rem;
+}
+
+.voice-text {
+  margin: 0 0 10px;
+}
+
+.voice-name {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/*CTA-------------------------------------*/
+.cta-section {
+  padding-block: 64px 72px;
+  background: linear-gradient(135deg, #ffe3ea, #fff7f8);
+}
+
+.cta-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.cta-copy h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+}
+
+.cta-copy p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.cta-form {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px 18px 22px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  display: grid;
+  gap: 12px;
+}
+
+.form-field {
+  display: grid;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.form-field span {
+  color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 0.9rem;
+  outline: none;
+  background: #fff;
+}
+
+input:focus,
+select:focus {
+  border-color: #c72b4b;
+  box-shadow: 0 0 0 1px rgba(199, 43, 75, 0.15);
+}
+
+/*フッター-------------------------------------*/
+
+.site-footer {
+  padding-block: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  background: #fff;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.footer-link {
+  text-decoration: underline;
+}
+
+/*タブレット-------------------------------------*/
+@media (max-width: 1024px) {
+  .hero-inner,
+  .model-inner,
+  .color-grid,
+  .voice-list,
+  .cta-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero {
+    padding-block: 56px 40px;
+    padding-bottom: 80vh;/*下コンテンツとの距離*/
+  }
+  
+  .hero-copy {
+    padding: 0 0;
+    z-index: 2;
+    margin-top: -40px;
+  }
+  
+  .hero-visual {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    overflow: hidden;
+  }
+  
+  .hero-visual img {
+    max-height:none;
+  }
+  
+  .model-section {
+    padding-block: 32px 56px;
+  }
+  
+  .model-copy {
+    margin: 0 0 40px 50px;
+  }
+  
+  .colors-section,
+  .voice-section {
+    padding-block: 40px;
+  }
+
+  .cta-section {
+    padding-block: 48px 56px;
+  }
+
+  .nav {
+    display: none; /* シンプルにPCのみ表示 */
+  }
+}
+
+/*スマホ-----------------------------------------------*/
+
+@media (max-width: 768px) {
+
+  .for-sp {
+    display: inline;
+  }
+
+  /* ヒーロー全体を絶対配置の基準にする */
+  .hero {
+    position: relative;
+    overflow: hidden; /* はみ出しを隠す */
+    padding-top: 0;
+    padding-bottom: 70vh;/*下コンテンツとの距離*/
+  }
+
+  /* hero-inner の左右余白を完全に消す */
+  .hero-inner {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2; /* コピーを前面に */
+  }
+
+  /* 画像を重ねるレイヤー */
+  .hero-visual {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* 中央基準にする */
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  /* ★ ここだけ変えれば画像サイズが自由に調整できる ★ */
+  .hero-visual img {
+    max-width: 300%;
+    max-height: none;
+    width: 140% ;   /* ← この値だけ変えればOK（例：120%, 180% など） */
+    height: auto;
+    object-fit: cover;
+    object-position: 50% 50%; /* ← ここで座標指定 */
+    display: block;
+  }
+
+  /* コピーは画像の上に重ねる */
+  .hero-copy {
+    padding-top: 0px;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .hero-text {
+    margin: 0 15px;
+    
+  }
+  
+  .btn-primary {
+    margin: 25px 0 0 25px;
+  }
+  
+  .model-copy {
+    margin: 0 0 40px 15px;
+  }
+  
+}
+
+
+
