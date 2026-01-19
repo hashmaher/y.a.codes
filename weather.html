@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="架空の天気予報サイト">
+		<title>時間ごとの天気予報</title>
+		<link href="css/reset.css" rel="stylesheet">
+		<link href="css/weather.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="header">
+			<input type="text" id="search-box" placeholder="地域名を検索">			
+			<ul id="search-results"></ul>
+			<div id="location-label"></div>
+		</div>
+		<div class="all-container">
+			<div class="ui_container">
+				<div id="loading" style="display:none;">読み込み中...</div>
+				<div id="error" style="display:none;"></div>
+				<a href="#" id="scroll-now-button" class="floating-btn">
+					<div>現在へ</div>
+				</a>
+			</div>
+			<div id="hourly-container">
+				<div class="hour-block">
+			</div>
+		</div>
+		<div class="footer">
+			<div class="footer-text">
+				Weather data © Open‑Meteo (CC BY 4.0) | <a href="disclaimer.html">免責事項</a>
+			</div>
+		</div>
+		<script src="js/cities.js"></script>
+		<script src="js/weather.js"></script>
+	</body>
+</html>

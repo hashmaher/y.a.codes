@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/*root-----------------------------------------------------------*/
+
+:root {
+	--main-color: #0C2B4E;
+	--accent-color: #1A3D64;
+	--bg-color: #1D546C;
+	--text-color: F4F4F4;
+}
+
+/*---------------------------------------------------------------*/
+
+html {
+	background: #eee;
+	font-family: system-ui;
+}
+
+body {
+	width: 100%;
+	color: #333;
+}
+
+.disclaimer {
+    max-width: 768px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/*-------------------------------------------------------*/
+
